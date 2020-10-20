@@ -1,52 +1,23 @@
+let x = 4
+let y = 4
 basic.forever(function () {
-    led.plot(4, 4)
-    basic.pause(100)
-    led.plot(3, 4)
-    basic.pause(100)
-    led.plot(2, 4)
-    basic.pause(100)
-    led.plot(1, 4)
-    basic.pause(100)
-    led.plot(0, 4)
-    basic.pause(100)
-    led.plot(0, 3)
-    basic.pause(100)
-    led.plot(1, 3)
-    basic.pause(100)
-    led.plot(2, 3)
-    basic.pause(100)
-    led.plot(3, 3)
-    basic.pause(100)
-    led.plot(4, 3)
-    basic.pause(100)
-    led.plot(4, 2)
-    basic.pause(100)
-    led.plot(3, 2)
-    basic.pause(100)
-    led.plot(2, 2)
-    basic.pause(100)
-    led.plot(1, 2)
-    basic.pause(100)
-    led.plot(0, 2)
-    basic.pause(100)
-    led.plot(0, 1)
-    basic.pause(100)
-    led.plot(1, 1)
-    basic.pause(100)
-    led.plot(2, 1)
-    basic.pause(100)
-    led.plot(3, 1)
-    basic.pause(100)
-    led.plot(4, 1)
-    basic.pause(100)
-    led.plot(4, 0)
-    basic.pause(100)
-    led.plot(3, 0)
-    basic.pause(100)
-    led.plot(2, 0)
-    basic.pause(100)
-    led.plot(1, 0)
-    basic.pause(100)
-    led.plot(0, 0)
-    basic.clearScreen()
+    if (x > 0) {
+        led.plot(x, y)
+        basic.pause(100)
+        for (let index = 0; index < 4; index++) {
+            led.plot(x - 1, y)
+            basic.pause(100)
+            x = x - 1
+        }
+    } else {
+        y = y - 1
+        led.plot(x, y)
+        basic.pause(100)
+        for (let index = 0; index < 4; index++) {
+            led.plot(x + 1, y)
+            x = x + 1
+            basic.pause(100)
+        }
+        y = y - 1
+    }
 })
